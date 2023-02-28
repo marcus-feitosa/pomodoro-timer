@@ -3,12 +3,19 @@ import {ThemeProvider } from 'styled-components'
 import { BrowserRouter } from 'react-router-dom'
 import { defaultTheme } from './styles/theme/default'
 import { Router } from './Router'
+import { CylesContextProvider } from './contexts/CyclesContext'
+
+
 
 export function App() {
+
+  
   return(
   <ThemeProvider theme={defaultTheme}>
     <BrowserRouter>
-      <Router/>
+      <CylesContextProvider>
+        <Router/>
+       </CylesContextProvider>
       <GlobalStyle/>
     </BrowserRouter>
   </ThemeProvider>

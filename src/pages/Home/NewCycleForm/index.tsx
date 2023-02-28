@@ -3,7 +3,7 @@ import * as zod from 'zod';
 import { useForm, useFormContext } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useContext } from "react";
-import { CyclesContext } from "..";
+import { CyclesContext } from "../../../contexts/CyclesContext";
 
 
 
@@ -30,7 +30,7 @@ export function NewCycleForm(){
             id="minutesAmount" 
             placeholder="00" 
             step={5} 
-            min={1} 
+            min={0} 
             max={60}
             disabled={!!activeCycle}
             {...register('minutesAmount', {valueAsNumber:true})}
